@@ -155,7 +155,7 @@ const keyPush = (event) => {
     const key = event.key
 
     if (!isGameActive && key === 'Enter') restart()
- 
+    
     if (key === 'ArrowUp') direction = 'up'
     if (key === 'ArrowDown') direction = 'down'
     if (key === 'ArrowLeft') direction = 'left'
@@ -164,3 +164,14 @@ const keyPush = (event) => {
     moveSnake()
 }   
 document.addEventListener('keydown', keyPush) 
+
+
+
+// Mobile
+const mobileButtons = document.querySelectorAll('.mobileButtons button')
+mobileButtons.forEach( button => {
+    button.addEventListener('click', evt => {
+        direction = evt.target.getAttribute('id')
+        moveSnake()
+    })
+})

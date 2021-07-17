@@ -35,6 +35,7 @@ h1 {
 #gameOverScreen h1 {
     font-size: 40px;
     margin: 0;
+    display: flex;
 }
 
 #gameOverScreen button {
@@ -52,4 +53,61 @@ h1 {
 
 #gameOverScreen button:hover {
     background-color: #0db18b;
+}
+
+.mobileButtons {
+    display: none;
+}
+
+
+
+@media (max-width: 415px) {
+    h1 {
+        display: none;
+    }
+    #stage,
+    #score,
+    #gameOverScreen {
+        width: 350px;
+    }
+    #gameOverScreen {
+        height: 350px;
+    }
+
+    .mobileButtons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .mobileButtons button {
+        padding-bottom: 10px;
+        border: 0;
+        border-radius: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #2dd6af;
+    }
+
+    .mobileButtons button:active {
+        background-color: #0db18b;
+    }
+
+    .mobileButtons #up,
+    .mobileButtons #down {
+        width: 50px;
+        height: 70px;
+    }
+
+    .mobileButtons div {
+        display: flex;
+        justify-content: space-between;
+        width: 190px;
+    }
+    .mobileButtons div button {
+        width: 70px;
+        height: 50px;
+    }
 }
